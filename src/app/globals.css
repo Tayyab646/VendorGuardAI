@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 40% 98%;
+  --foreground: 218 48% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 218 48% 10%;
+  --primary: 193 95% 44%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 218 22% 92%;
+  --secondary-foreground: 218 48% 10%;
+  --muted: 214 22% 92%;
+  --muted-foreground: 216 15% 38%;
+  --accent: 174 84% 42%;
+  --accent-foreground: 218 48% 10%;
+  --destructive: 8 85% 58%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214 22% 84%;
+  --input: 214 22% 84%;
+  --ring: 193 95% 44%;
+}
+
+.dark {
+  --background: 218 54% 7%;
+  --foreground: 208 42% 96%;
+  --card: 217 46% 11%;
+  --card-foreground: 208 42% 96%;
+  --primary: 193 95% 50%;
+  --primary-foreground: 218 54% 7%;
+  --secondary: 217 32% 17%;
+  --secondary-foreground: 208 42% 96%;
+  --muted: 217 32% 17%;
+  --muted-foreground: 214 18% 68%;
+  --accent: 174 84% 48%;
+  --accent-foreground: 218 54% 7%;
+  --destructive: 12 91% 60%;
+  --destructive-foreground: 208 42% 96%;
+  --border: 217 28% 22%;
+  --input: 217 28% 22%;
+  --ring: 193 95% 50%;
+}
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+}
+
+.cyber-grid {
+  background-image:
+    linear-gradient(rgba(17, 210, 227, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 210, 227, 0.07) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.noise {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.1) 1px, transparent 0);
+  background-size: 22px 22px;
+}
