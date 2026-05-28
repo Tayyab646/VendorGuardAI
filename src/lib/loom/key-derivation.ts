@@ -5,7 +5,7 @@ export type DerivedKey = {
   iterations: number;
 };
 
-export async function deriveVaultKey(passphrase: string, salt: Uint8Array<ArrayBuffer> = crypto.getRandomValues(new Uint8Array(16))): Promise<DerivedKey> {
+export async function deriveVaultKey(passphrase: string, salt: Uint8Array<ArrayBuffer> = crypto.getRandomValues(new Uint8Array(new ArrayBuffer(16)))): Promise<DerivedKey> {
   if (!passphrase || passphrase.length < 8) throw new Error("Use a passphrase with at least 8 characters.");
   const material = await crypto.subtle.importKey("raw", new TextEncoder().encode(passphrase), "PBKDF2", false, ["deriveKey"]);
   const iterations = 310000;
