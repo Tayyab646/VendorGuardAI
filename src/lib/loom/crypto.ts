@@ -13,7 +13,7 @@ export type EncryptedBlob = {
 
 export async function encryptJson(value: unknown, passphrase: string): Promise<EncryptedBlob> {
   const derived = await deriveVaultKeyArgon2idReady(passphrase);
-  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const iv = crypto.getRandomValues(new Uint8Array(new ArrayBuffer(12)));
   const plaintext = new TextEncoder().encode(JSON.stringify(value));
   const ciphertext = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, derived.key, plaintext);
   return {
